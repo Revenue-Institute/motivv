@@ -2,61 +2,127 @@
 
 @config '../../tailwind.config.ts';
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--gray-200, currentColor);
+    border-color: var(--grayscale-200, currentColor);
   }
 }
 
 :root {
-  --header-height: 64px;
+  --header-height: 72px;
 
   text-rendering: geometricprecision;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-:root:not(html.dark) {
-  /* colors */
-  color: var(--text-primary);
-  background-color: var(--surface-primary);
-}
+  /* Motivv brand palette — accent = mint (#48BE9A) */
+  --accent-50: #f0fbf6;
+  --accent-100: #d6f5e6;
+  --accent-200: #adebcb;
+  --accent-300: #7fdcae;
+  --accent-400: #5fcca0;
+  --accent-500: #48be9a;
+  --accent-600: #3aa384;
+  --accent-700: #2c8268;
+  --accent-800: #226852;
+  --accent-900: #1c5443;
+  --accent-950: #0d2e25;
+  --accent-rgb-50: 240, 251, 246;
+  --accent-rgb-100: 214, 245, 230;
+  --accent-rgb-200: 173, 235, 203;
+  --accent-rgb-300: 127, 220, 174;
+  --accent-rgb-400: 95, 204, 160;
+  --accent-rgb-500: 72, 190, 154;
+  --accent-rgb-600: 58, 163, 132;
+  --accent-rgb-700: 44, 130, 104;
+  --accent-rgb-800: 34, 104, 82;
+  --accent-rgb-900: 28, 84, 67;
+  --accent-rgb-950: 13, 46, 37;
 
-:root:not(html.dark) ::selection {
-  background-color: var(--accent-200);
-}
+  /* Motivv brand palette — grayscale = slate */
+  --grayscale-50: #f8fafc;
+  --grayscale-100: #f1f5f9;
+  --grayscale-200: #e2e8f0;
+  --grayscale-300: #cbd5e1;
+  --grayscale-400: #94a3b8;
+  --grayscale-500: #64748b;
+  --grayscale-600: #4d6278;
+  --grayscale-700: #334155;
+  --grayscale-800: #1e293b;
+  --grayscale-900: #0f172a;
+  --grayscale-950: #020617;
+  --grayscale-rgb-50: 248, 250, 252;
+  --grayscale-rgb-100: 241, 245, 249;
+  --grayscale-rgb-200: 226, 232, 240;
+  --grayscale-rgb-300: 203, 213, 225;
+  --grayscale-rgb-400: 148, 163, 184;
+  --grayscale-rgb-500: 100, 116, 139;
+  --grayscale-rgb-600: 77, 98, 120;
+  --grayscale-rgb-700: 51, 65, 85;
+  --grayscale-rgb-800: 30, 41, 59;
+  --grayscale-rgb-900: 15, 23, 42;
+  --grayscale-rgb-950: 2, 6, 23;
 
-:root:not(html.dark) *:focus-visible {
-  outline-color: var(--accent-300);
-}
+  /* Motivv secondary (deep teal) and sky (accent blue) — explicit, used via tailwind tokens */
+  --brand-teal-50: #ecf2f4;
+  --brand-teal-100: #cfdde1;
+  --brand-teal-200: #9ebac3;
+  --brand-teal-300: #6e96a4;
+  --brand-teal-400: #3d7386;
+  --brand-teal-500: #1f5667;
+  --brand-teal-600: #174252;
+  --brand-teal-700: #103240;
+  --brand-teal-800: #0a232e;
+  --brand-teal-900: #04161e;
 
-:root {
-  color: var(--dark-text-primary);
-  background-color: var(--dark-surface-primary);
+  --brand-sky-50: #f1f7fb;
+  --brand-sky-100: #dceaf3;
+  --brand-sky-200: #b9d4e7;
+  --brand-sky-300: #95bedb;
+  --brand-sky-400: #6fa7c8;
+  --brand-sky-500: #4f8eb3;
+  --brand-sky-600: #3a7297;
+  --brand-sky-700: #2b5775;
+  --brand-sky-800: #1d3d54;
+  --brand-sky-900: #112433;
+
+  color: var(--grayscale-600);
+  background-color: var(--grayscale-50);
 }
 
 :root ::selection {
-  background-color: var(--accent-950);
+  background-color: var(--accent-200);
 }
 
 :root *:focus-visible {
+  outline-color: var(--accent-500);
+  outline-offset: 2px;
+}
+
+html.dark {
+  color: var(--grayscale-100);
+  background-color: var(--grayscale-950);
+}
+
+html.dark ::selection {
+  background-color: var(--accent-700);
+}
+
+html.dark *:focus-visible {
   outline-color: var(--accent-400);
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }

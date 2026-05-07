@@ -1,5 +1,5 @@
 {
-  "name": "basehub-marketing-website-template",
+  "name": "motivv-marketing-site",
   "version": "0.1.0",
   "scripts": {
     "dev": "basehub dev & next dev --turbopack",

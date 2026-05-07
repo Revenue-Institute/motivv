@@ -1,119 +1,70 @@
 import type { Metadata, Viewport } from "next";
-
-import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
-import { basehub } from "basehub";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { Providers } from "./providers";
 import { Header } from "./_components/header";
 import { Footer } from "./_components/footer";
-import { Newsletter } from "./_sections/newsletter";
-import { draftMode } from "next/headers";
+import "./globals.css";
 
-const geist = Geist({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
-  fallback: [
-    "Inter",
-    "-apple-system",
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "Roboto",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    "sans-serif",
-  ],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
+const jakartaDisplay = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-mono",
-  fallback: ["monaco", "monospace"],
+  variable: "--font-display",
+  weight: ["700", "800"],
 });
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const data = await basehub({ cache: "no-store", draft: (await draftMode()).isEnabled }).query({
-    site: {
-      settings: {
-        metadata: {
-          sitename: true,
-          titleTemplate: true,
-          defaultTitle: true,
-          defaultDescription: true,
-          favicon: {
-            url: true,
-            mimeType: true,
-          },
-          ogImage: {
-            url: true,
-          },
-          xAccount: {
-            url: true,
-          },
-        },
-      },
-    },
-  });
-
-  const images = [{ url: data.site.settings.metadata.ogImage.url }];
-
-  let xAccount: string | undefined = undefined;
-
-  if (data.site.settings.metadata.xAccount) {
-    try {
-      const xUrl = new URL(data.site.settings.metadata.xAccount.url);
-      const split = xUrl.pathname.split("/");
-
-      xAccount = split[split.length - 1];
-    } catch {
-      // invalid url noop
-    }
-  }
-
-  return {
-    title: {
-      default: data.site.settings.metadata.defaultTitle,
-      template: data.site.settings.metadata.titleTemplate,
-    },
-    applicationName: data.site.settings.metadata.sitename,
-    description: data.site.settings.metadata.defaultDescription,
-    icons: [
-      {
-        url: data.site.settings.metadata.favicon.url,
-        rel: "icon",
-        type: data.site.settings.metadata.favicon.mimeType,
-      },
-    ],
-    openGraph: { type: "website", images, siteName: data.site.settings.metadata.sitename },
-    twitter: {
-      card: "summary_large_image",
-      images,
-      site: data.site.settings.metadata.sitename,
-      creator: xAccount,
-    },
-  };
+export const metadata: Metadata = {
+  metadataBase: new URL("https://motivvhealthstudios.com"),
+  title: {
+    default: "Motivv Health Studios — Where Health & Gaming Are One",
+    template: "%s · Motivv Health Studios",
+  },
+  description:
+    "Eleven mobile games designed to engage you with your health — ad-free, free with your benefits.",
+  applicationName: "Motivv Health Studios",
+  authors: [{ name: "Motivv Health Studios" }],
+  keywords: ["Motivv", "health", "gaming", "mobile games", "rewards", "AmeriHealth Caritas"],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Motivv Health Studios",
+    title: "Motivv Health Studios — Where Health & Gaming Are One",
+    description:
+      "Eleven mobile games designed to engage you with your health — ad-free, free with your benefits.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Motivv Health Studios",
+    description: "Where Health & Gaming Are One.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export const viewport: Viewport = {
-  maximumScale: 1, // Disable auto-zoom on mobile Safari
+  themeColor: "#48be9a",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <body
-        className={`min-h-svh max-w-[100vw] bg-surface-primary text-text-primary dark:bg-dark-surface-primary dark:text-dark-text-primary ${geistMono.variable} ${geist.variable} font-sans`}
-      >
+    <html lang="en" className={`${jakarta.variable} ${jakartaDisplay.variable}`}>
+      <body className="min-h-svh bg-grayscale-50 font-sans text-base antialiased">
         <Providers>
           <Header />
-          <main className="min-h-[calc(100svh-var(--header-height))]">{children}</main>
-          <Newsletter />
+          <main id="main" className="min-h-[calc(100svh-var(--header-height))]">
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>

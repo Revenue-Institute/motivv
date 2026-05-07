@@ -1,100 +1,47 @@
-import { ButtonLink } from "@/common/button";
-import { Pump } from "basehub/react-pump";
-import { buttonFragment } from "@/lib/basehub/fragments";
-import { fragmentOn } from "basehub";
+import Link from "next/link";
 
-import { DesktopMenu, MobileMenu } from "./navigation-menu";
-import { DarkLightImageAutoscale } from "@/common/dark-light-image";
+import { CtaLink } from "../cta";
 
-const headerLinksFragment = fragmentOn("HeaderNavbarLinkComponent", {
-  _title: true,
-  href: true,
-  _id: true,
-  sublinks: {
-    items: {
-      _id: true,
-      _title: true,
-      link: {
-        __typename: true,
-        on_CustomTextComponent: {
-          text: true,
-        },
-        on_PageReferenceComponent: {
-          page: {
-            pathname: true,
-            _title: true,
-          },
-        },
-      },
-    },
-  },
-});
+const NAV_LINKS = [
+  { label: "Games", href: "/#games" },
+  { label: "Why Motivv", href: "/#why-motivv" },
+  { label: "For Partners", href: "/demo" },
+];
 
-export type HeaderLiksFragment = fragmentOn.infer<typeof headerLinksFragment>;
-
-export const headerFragment = fragmentOn("Header", {
-  navbar: {
-    items: headerLinksFragment,
-  },
-  rightCtas: {
-    items: buttonFragment,
-  },
-});
-
-export type HeaderFragment = fragmentOn.infer<typeof headerFragment>;
-
-export async function Header() {
+export function Header() {
   return (
-    <Pump
-      queries={[
-        {
-          site: {
-            header: headerFragment,
-            settings: {
-              logo: {
-                dark: {
-                  url: true,
-                  alt: true,
-                  width: true,
-                  height: true,
-                  aspectRatio: true,
-                  blurDataURL: true,
-                },
-                light: {
-                  url: true,
-                  alt: true,
-                  width: true,
-                  height: true,
-                  aspectRatio: true,
-                  blurDataURL: true,
-                },
-              },
-            },
-          },
-        },
-      ]}
-    >
-      {async ([
-        {
-          site: { header, settings },
-        },
-      ]) => {
-        "use server";
+    <header className="sticky top-0 z-50 w-full border-b border-grayscale-100 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+      <div className="mx-auto flex h-(--header-height) max-w-7xl items-center justify-between gap-6 px-6">
+        <Link href="/" className="flex items-center gap-2 text-brand-teal-700">
+          <Wordmark />
+        </Link>
 
-        return (
-          <header className="sticky left-0 top-0 z-100 flex w-full flex-col border-b border-border bg-surface-primary dark:border-dark-border dark:bg-dark-surface-primary">
-            <div className="flex h-(--header-height) bg-surface-primary dark:bg-dark-surface-primary">
-              <div className="container mx-auto grid w-full grid-cols-header place-items-center content-center items-center px-6 *:first:justify-self-start">
-                <ButtonLink unstyled className="flex items-center ring-offset-2" href="/">
-                  <DarkLightImageAutoscale priority {...settings.logo} />
-                </ButtonLink>
-                <DesktopMenu {...header} />
-                <MobileMenu {...header} />
-              </div>
-            </div>
-          </header>
-        );
-      }}
-    </Pump>
+        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-grayscale-600 transition hover:text-brand-teal-700"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <CtaLink href="/#games" size="md">
+            Browse games
+          </CtaLink>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Wordmark() {
+  return (
+    <span className="font-display text-2xl font-extrabold tracking-tight text-brand-teal-700">
+      motivv<span className="text-brand-mint-500">.</span>
+    </span>
   );
 }
