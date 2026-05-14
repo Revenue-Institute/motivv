@@ -5,7 +5,7 @@ import { CtaLink } from "../cta";
 const NAV_LINKS = [
   { label: "Games", href: "/#games" },
   { label: "Why Motivv", href: "/#why-motivv" },
-  { label: "For Partners", href: "/demo" },
+  { label: "For Partners", href: "/partner" },
 ];
 
 export function Header() {

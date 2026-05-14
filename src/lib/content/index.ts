@@ -4,9 +4,15 @@ import type { AppRecord, HomeContent, PartnerRecord } from "./types";
 export type { AppGenre, AppRecord, FaqItem, FeatureRow, HomeContent, PartnerRecord, StatCard, TrustBadge } from "./types";
 export { APP_GENRES } from "./types";
 export { STORE_LINKS };
+export { getAppDetail, APP_DETAILS } from "./app-details";
+export type { AppDetail } from "./app-details";
 
 export async function getApps(): Promise<AppRecord[]> {
   return [...APPS].sort((a, b) => a.order - b.order);
+}
+
+export async function getAppBySlug(slug: string): Promise<AppRecord | null> {
+  return APPS.find((app) => app.slug === slug) ?? null;
 }
 
 export async function getHomeContent(): Promise<HomeContent> {

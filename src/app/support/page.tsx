@@ -46,7 +46,7 @@ export default function SupportPage() {
           {
             icon: "🎁",
             title: "Rewards questions",
-            body: "Questions about ticket balances, prize drawings, or reward redemption — we'll get them answered.",
+            body: "Questions about ticket balances, prize drawings, or reward redemption - we'll get them answered.",
           },
         ]}
       />
@@ -64,7 +64,7 @@ export default function SupportPage() {
             >
               help@motivvhealthstudios.com
             </Link>{" "}
-            with as much detail as you can — game name, device, what happened — and we&apos;ll take it from there.
+            with as much detail as you can - game name, device, what happened - and we&apos;ll take it from there.
           </p>
         </div>
       </section>

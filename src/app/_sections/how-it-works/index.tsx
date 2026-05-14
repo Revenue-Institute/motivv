@@ -40,7 +40,7 @@ function MemberServicesBlock({ partner }: { partner: PartnerRecord }) {
       <div>
         <p className="font-semibold">Need help getting started?</p>
         <p className="mt-1 text-grayscale-600">
-          Call {partner.shortName} Member Services 24/7 — we&apos;ll walk you through it.
+          Call {partner.shortName} Member Services 24/7 - we&apos;ll walk you through it.
         </p>
       </div>
       <div className="flex flex-col text-right md:items-end">

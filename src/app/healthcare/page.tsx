@@ -48,8 +48,8 @@ export default function HealthcarePage() {
       <AudienceHero
         eyebrow="For health plans"
         headline="Engage people where they are, not where you want them to be."
-        subhead="The healthcare industry has tried just about everything to crack the code on engagement. The honest answer: digital health isn't all that engaging. Motivv changes that — by meeting your members inside the games they already play."
-        primary={{ label: "Get a demo", href: "/demo" }}
+        subhead="The healthcare industry has tried just about everything to crack the code on engagement. The honest answer: digital health isn't all that engaging. Motivv changes that - by meeting your members inside the games they already play."
+        primary={{ label: "Get a demo", href: "/partner" }}
         secondary={{ label: "See the games", href: "/#games" }}
         artworkEmoji="💚"
         artworkLabel="A heart representing healthier engagement"
@@ -58,7 +58,7 @@ export default function HealthcarePage() {
       <FeatureCardsGrid
         eyebrow="What you get"
         heading="Health engagement requires interaction. We've made it inevitable."
-        description="The needs of healthcare compete with how people actually spend time on their phones — and right now, healthcare is losing. The appeal of games maximizes your reach, increasing adoption and utilization to:"
+        description="The needs of healthcare compete with how people actually spend time on their phones - and right now, healthcare is losing. The appeal of games maximizes your reach, increasing adoption and utilization to:"
         cards={FEATURE_CARDS}
       />
 
@@ -74,12 +74,12 @@ export default function HealthcarePage() {
           {
             icon: "🚀",
             title: "Launch in weeks",
-            body: "A pre-built game library and onboarding flow means you don't need to build a thing — you brand it, we deploy it.",
+            body: "A pre-built game library and onboarding flow means you don't need to build a thing - you brand it, we deploy it.",
           },
           {
             icon: "🎯",
             title: "Personalized missions",
-            body: "Drive members toward the actions you care about: PCP visits, screenings, app downloads, surveys — all rewarded in-game.",
+            body: "Drive members toward the actions you care about: PCP visits, screenings, app downloads, surveys - all rewarded in-game.",
           },
           {
             icon: "🛡️",
@@ -92,7 +92,7 @@ export default function HealthcarePage() {
       <AudienceFinalCta
         heading="Give your members an experience they'll actually use."
         subhead="Let's launch an engagement campaign customized to your organizational goals."
-        primary={{ label: "Get a demo", href: "/demo" }}
+        primary={{ label: "Get a demo", href: "/partner" }}
         secondary={{ label: "Talk to sales", href: "mailto:help@motivvhealthstudios.com" }}
       />
     </>

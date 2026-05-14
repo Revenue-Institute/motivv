@@ -21,7 +21,7 @@
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Motivv brand palette — accent = mint (#48BE9A) */
+  /* Motivv brand palette - accent = mint (#48BE9A) */
   --accent-50: #f0fbf6;
   --accent-100: #d6f5e6;
   --accent-200: #adebcb;
@@ -45,7 +45,7 @@
   --accent-rgb-900: 28, 84, 67;
   --accent-rgb-950: 13, 46, 37;
 
-  /* Motivv brand palette — grayscale = slate */
+  /* Motivv brand palette - grayscale = slate */
   --grayscale-50: #f8fafc;
   --grayscale-100: #f1f5f9;
   --grayscale-200: #e2e8f0;
@@ -69,7 +69,7 @@
   --grayscale-rgb-900: 15, 23, 42;
   --grayscale-rgb-950: 2, 6, 23;
 
-  /* Motivv secondary (deep teal) and sky (accent blue) — explicit, used via tailwind tokens */
+  /* Motivv secondary (deep teal) and sky (accent blue) - explicit, used via tailwind tokens */
   --brand-teal-50: #ecf2f4;
   --brand-teal-100: #cfdde1;
   --brand-teal-200: #9ebac3;

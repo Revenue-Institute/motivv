@@ -17,7 +17,7 @@ export default function TermsOfServicePage() {
     >
       <p>
         These Terms of Service govern your use of Motivv Health Studios games and services. The
-        text below is a placeholder while legal review of the rebuilt site is in flight — the
+        text below is a placeholder while legal review of the rebuilt site is in flight - the
         signed terms remain in effect at the production URL listed below until this page is
         republished.
       </p>

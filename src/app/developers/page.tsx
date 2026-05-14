@@ -15,7 +15,7 @@ const FEATURES = [
   {
     icon: "🚫",
     title: "No more ads",
-    body: "Your players never see a third-party ad. We replace ad revenue with a sustainable, member-driven model — and the game stays free.",
+    body: "Your players never see a third-party ad. We replace ad revenue with a sustainable, member-driven model - and the game stays free.",
   },
   {
     icon: "💸",
@@ -25,7 +25,7 @@ const FEATURES = [
   {
     icon: "👥",
     title: "Built-in audience",
-    body: "We bring your game to a robust, engaged member base on day one — no UA spend, no app-store roulette.",
+    body: "We bring your game to a robust, engaged member base on day one - no UA spend, no app-store roulette.",
   },
   {
     icon: "🛠️",
@@ -40,8 +40,8 @@ export default function DevelopersPage() {
       <AudienceHero
         eyebrow="For game developers"
         headline="We'd love to talk about your games."
-        subhead="Motivv is a platform that puts your games in front of an engaged, built-in audience on their health journey — with no ads, real revenue, and zero distribution headaches."
-        primary={{ label: "Get a demo", href: "/demo" }}
+        subhead="Motivv is a platform that puts your games in front of an engaged, built-in audience on their health journey - with no ads, real revenue, and zero distribution headaches."
+        primary={{ label: "Get a demo", href: "/partner" }}
         secondary={{ label: "Email us", href: "mailto:help@motivvhealthstudios.com?subject=Motivv%20developer%20partnership" }}
         artworkEmoji="🎮"
         artworkLabel="A game controller representing developer partnerships"
@@ -56,7 +56,7 @@ export default function DevelopersPage() {
       <AudienceFinalCta
         heading="Tell us about your games."
         subhead="We'll set up a call and walk through how the partnership works."
-        primary={{ label: "Get a demo", href: "/demo" }}
+        primary={{ label: "Get a demo", href: "/partner" }}
         secondary={{
           label: "Email us",
           href: "mailto:help@motivvhealthstudios.com?subject=Motivv%20developer%20partnership",

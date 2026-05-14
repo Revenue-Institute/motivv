@@ -8,7 +8,7 @@ export default function NotFound() {
         Page not found
       </h1>
       <p className="mt-4 max-w-md text-lg leading-relaxed text-grayscale-600">
-        That page doesn&apos;t exist — but plenty of games do. Head back home to browse the catalog.
+        That page doesn&apos;t exist - but plenty of games do. Head back home to browse the catalog.
       </p>
       <div className="mt-8">
         <CtaLink href="/">Back to home</CtaLink>

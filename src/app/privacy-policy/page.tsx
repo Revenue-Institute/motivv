@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
       <p>
         This Privacy Policy describes how Motivv Health Studios collects, uses, and protects
         information when you use our games and services. The text below is a placeholder while
-        legal review of the rebuilt site is in flight — the signed policy remains in effect at the
+        legal review of the rebuilt site is in flight - the signed policy remains in effect at the
         production URL listed below until this page is republished.
       </p>
       <h2>Information we collect</h2>

@@ -16,7 +16,7 @@ export default function SignInPage() {
       <AudienceHero
         eyebrow="Sign in"
         headline="Sign in inside the game."
-        subhead="One Motivv account works across the entire game library. Download any game and sign in with your email, password, and member ID — your progress and rewards travel with you."
+        subhead="One Motivv account works across the entire game library. Download any game and sign in with your email, password, and member ID - your progress and rewards travel with you."
         primary={{ label: "Browse the games", href: "/#games" }}
         secondary={{ label: "Need help?", href: "/support" }}
       />
@@ -38,7 +38,7 @@ export default function SignInPage() {
           {
             icon: "🎟️",
             title: "Your activation code",
-            body: "Only needed the first time you register — you don't need it for every sign-in after that.",
+            body: "Only needed the first time you register - you don't need it for every sign-in after that.",
           },
         ]}
       />

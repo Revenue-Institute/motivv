@@ -15,7 +15,7 @@ const FEATURES = [
   {
     icon: "🎯",
     title: "Find your game",
-    body: "Pick anything from the catalog — puzzle, word, card, action. One login, every game.",
+    body: "Pick anything from the catalog - puzzle, word, card, action. One login, every game.",
   },
   {
     icon: "🧠",
@@ -25,7 +25,7 @@ const FEATURES = [
   {
     icon: "🎁",
     title: "Monthly prize drawings",
-    body: "Play games, complete missions, answer trivia — and get entered into regular prize drawings.",
+    body: "Play games, complete missions, answer trivia - and get entered into regular prize drawings.",
   },
   {
     icon: "🩺",
@@ -40,7 +40,7 @@ export default function PlayersPage() {
       <AudienceHero
         eyebrow="For players"
         headline="Play your way to better health."
-        subhead="Entirely free mobile games — never any ads — with chances to win prize drawings by answering trivia and completing personalized missions."
+        subhead="Entirely free mobile games - never any ads - with chances to win prize drawings by answering trivia and completing personalized missions."
         primary={{ label: "Browse the games", href: "/#games" }}
         secondary={{ label: "How it works", href: "/healthcare" }}
         artworkEmoji="🕹️"

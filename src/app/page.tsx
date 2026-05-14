@@ -23,7 +23,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 
   if (partner) {
     return {
-      title: `${partner.shortName} — ${partner.heroHeadline}`,
+      title: `${partner.shortName} - ${partner.heroHeadline}`,
       description: partner.heroSubhead,
       robots: { index: false, follow: true },
       alternates: { canonical: "/" },
@@ -31,9 +31,9 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   }
 
   return {
-    title: "Motivv Health Studios — Where Health & Gaming Are One",
+    title: "Motivv Health Studios - Where Health & Gaming Are One",
     description:
-      "Eleven mobile games designed to engage you with your health — ad-free, free with your benefits.",
+      "Eleven mobile games designed to engage you with your health - ad-free, free with your benefits.",
   };
 }
 

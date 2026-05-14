@@ -18,7 +18,7 @@ export default function RewardsTermsPage() {
       <p>
         These Rewards Program Terms govern how you earn, view, and redeem rewards through Motivv
         Health Studios games. The text below is a placeholder while legal review of the rebuilt
-        site is in flight — the signed terms remain in effect at the production URL listed below
+        site is in flight - the signed terms remain in effect at the production URL listed below
         until this page is republished.
       </p>
       <h2>Eligibility</h2>

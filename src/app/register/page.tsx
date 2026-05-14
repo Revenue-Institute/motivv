@@ -26,7 +26,7 @@ export default async function RegisterPage({ searchParams }: SearchParams) {
       <AudienceHero
         eyebrow="Get started"
         headline="Register inside the game."
-        subhead="Pick any Motivv game from the catalog, download it, and tap Register. The first game you download walks you through creating your account — after that you're set across the whole library."
+        subhead="Pick any Motivv game from the catalog, download it, and tap Register. The first game you download walks you through creating your account - after that you're set across the whole library."
         primary={{ label: "Browse the games", href: "/#games" }}
         secondary={{ label: "How it works", href: "/players" }}
         artworkEmoji="✨"
@@ -61,7 +61,7 @@ export default async function RegisterPage({ searchParams }: SearchParams) {
           {
             icon: "📧",
             title: "An email & password",
-            body: "Pick anything — this becomes your login across every Motivv game.",
+            body: "Pick anything - this becomes your login across every Motivv game.",
           },
           {
             icon: "🪪",
